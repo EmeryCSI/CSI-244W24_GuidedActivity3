@@ -336,16 +336,51 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 #### Step 4: Handling Form Submissions
 
-##### Setting Up Route for Form Submission
+#### Setting Up Route for Form Submission
 - **Action:** Create a route to process form submissions.
-  - In `server.js`, add a route for form submission. For example:
+  - In `server.js`, add a route for form submission. Use the HTTP `GET` method to capture data from the query string.
     ```javascript
     app.get("/submitform", (req, res) => {
       // Code to process form data
-        console.log(req.query);
+      console.log(req.query);
     });
     ```
-   - **Action:** Run the application
+  
+- **Action:** Get the data from the form and save it in a file.
+  - Use the `fs` (File System) module to write form data to a file.
+  - Implement error handling to manage file write operations.
+  - Send a response back to the user upon successful data handling.
+
+  Here is the expanded code for the `/submitform` endpoint:
+  ```javascript
+  const fs = require('fs');
+
+  app.get("/submitform", (req, res) => {
+    // Notice that the data from the form is in the request query object.
+    // The information is in the form of key-value pairs with the key
+    // being the name of the input field and the value being the value of the input field.
+    console.log(req.query);
+
+    // Let's save these values to a file and then send a response to the user.
+    fs.appendFile("formdata.txt", JSON.stringify(req.query) + '\n', (err) => {
+      if (err) {
+        console.error("Error writing to file", err);
+        res.status(500).send("An error occurred while processing your form.");
+        return;
+      }
+      console.log("The data was appended to file!");
+
+      // Send a response back to the user.
+      res.send("Thank you for submitting the form");
+    });
+  });
+  ```
+
+#### Understanding the Code:
+- `fs.appendFile`: This method is used to append the form data to a file named `formdata.txt`. If the file doesn't exist, it will be created.
+- `JSON.stringify(req.query)`: Converts the query object into a string format for easy storage.
+- `res.send`: Sends a response back to the client.
+
 
 #### Step 5: Testing the Application
 
@@ -356,12 +391,13 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
    - Visit `http://localhost:3000` in a browser to view the `index.html` page.
    - Go to `http://localhost:3000/support` to access the support form.
    - Test submitting the form and ensure the server processes it as expected.
+   - A `formdata.txt` file should have been created containing the information from the form.
 
 3. **Debugging:**
    - Troubleshoot any issues by checking the server console and ensuring all routes are correctly set up.
 
 
-Create a new commit with the message Guided Activity 2 Complete and push the changes to GitHub
+Create a new commit with the message Guided Activity 3 Complete and push the changes to GitHub
 
 
 If you have any questions about this assignment please reach out to myself or our TA for this course.
