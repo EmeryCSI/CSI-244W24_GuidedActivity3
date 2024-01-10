@@ -44,9 +44,9 @@ Create a Express server that:
   - modify the scripts collection in package.json with the following:
     ```json
       "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js"
-  },
+        "start": "node server.js",
+        "dev": "nodemon server.js"
+      },
     ```
 
 - **Navigate to Your Project Folder:**
