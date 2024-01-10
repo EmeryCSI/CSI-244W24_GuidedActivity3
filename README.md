@@ -78,8 +78,6 @@ Thank you for clarifying. Let's create step-by-step instructions tailored to you
 
 Certainly! We'll incorporate this into Step 3 of your instructional document, focusing on creating the `public` directory, setting up the `index.html` file, and explaining the Bootstrap components within it.
 
-### Step 3: Creating the Homepage with Bootstrap
-
 #### Creating the `public` Directory and `index.html` File
 
 1. **Creating the `public` Directory:**
@@ -233,9 +231,108 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
      ```
 
 ##### Creating `support.html`
-- **Action:** Create a support page with a form.
-  - Still in the `public` directory, create a file named `support.html`.
-  - Design your form and include necessary HTML elements.
+
+1. **Creating `support.html`:**
+   - Inside the `public` directory, you'll create a file named `support.html`.
+   - Use a text editor or the command line to create this file:
+     ```bash
+     new-item support.html
+     ```
+
+#### Adding Content to `support.html`
+
+1. **Basic HTML Structure:**
+   - Begin with the standard HTML5 structure. Include `DOCTYPE`, the opening `<html>` tag with language attribute, `<head>`, and `<body>` sections.
+   - In the `<head>` section, add a title for your page and link Bootstrap’s CSS for styling.
+     ```html
+     <!DOCTYPE html>
+     <html lang="en">
+       <head>
+         <meta charset="UTF-8" />
+         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+         <title>Support Form</title>
+         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+       </head>
+       <body>
+       <!-- code for next step goes here -->
+       </body>
+     </html>
+     ```
+
+2. **Bootstrap Container:**
+   - Use a `container` class to center your form on the page. Bootstrap's `container` class provides margins and proper alignment.
+     ```html
+     <div class="container">
+       <h2>Support Form</h2>
+      <!-- code for the nex step goes here -->
+     </div>
+     ```
+
+3. **Creating the Form:**
+   - The `form` tag defines how data will be sent. In this case, it’s using the `GET` method to `/submitform`.
+   - Comments in the HTML explain that the data is sent via URL (not secure for sensitive data), and the `name` attribute in form elements corresponds to the data keys.
+     ```html
+     <form action="/submitform" method="get">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea
+            class="form-control"
+            id="message"
+            rows="3"
+            placeholder="Enter your message"
+            name="message"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="date">Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="date"
+            name="date"
+            placeholder="Select a date"
+          />
+        </div>
+        <div class="form-group">
+          <label for="urgency">Urgency</label>
+          <select class="form-control" id="urgency" name="urgency">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+     ```
+
+4. **Form Input Elements:**
+   - Notice the use Bootstrap’s `form-group` and `form-control` classes to style your input fields.
+   - Each input field (like `text`, `email`, `textarea`, `date`, and `select`) is wrapped in a `div` with the class `form-group` for proper spacing and layout.
+   - The `class="form-control"` on each input element gives a consistent and attractive styling.
+   - The `name` attribute will determine the name of the property where the data will be sent. 
+
+5. **Submit Button:**
+   - A submit button is included at the end of the form. The `btn` and `btn-primary` classes style it as a primary Bootstrap button.
 
 #### Step 4: Handling Form Submissions
 
@@ -245,9 +342,9 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
     ```javascript
     app.post("/submitform", (req, res) => {
       // Code to process form data
+        console.log(req.query);
     });
     ```
-  - Include necessary middleware to parse form data.
 
 #### Step 5: Testing the Application
 
