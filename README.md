@@ -80,7 +80,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 #### Creating the `public` Directory and `index.html` File
 
-1. **Creating the `public` Directory:**
+- **Creating the `public` Directory:**
    - The `public` directory will hold all your static files like HTML, CSS, and JavaScript.
    - In your project's root directory, create the `public` directory:
      ```bash
@@ -88,13 +88,13 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
      ```
    - This command creates a new directory named `public`.
 
-2. **Navigate to the `public` Directory:**
+- **Navigate to the `public` Directory:**
    - Change into the `public` directory:
      ```bash
      cd public
      ```
 
-3. **Creating `index.html`:**
+- **Creating `index.html`:**
    - Within the `public` directory, create a file named `index.html`.
    - You can use a text editor or the following terminal command:
      ```bash
