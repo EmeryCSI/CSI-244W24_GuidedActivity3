@@ -340,12 +340,12 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 - **Action:** Create a route to process form submissions.
   - In `server.js`, add a route for form submission. For example:
     ```javascript
-    app.post("/submitform", (req, res) => {
+    app.get("/submitform", (req, res) => {
       // Code to process form data
         console.log(req.query);
     });
     ```
-   - **Action:** Create a route to process form submissions.
+   - **Action:** Run the application
 
 #### Step 5: Testing the Application
 
