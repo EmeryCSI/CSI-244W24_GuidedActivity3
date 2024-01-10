@@ -345,6 +345,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
         console.log(req.query);
     });
     ```
+   - **Action:** Create a route to process form submissions.
 
 #### Step 5: Testing the Application
 
