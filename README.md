@@ -8,30 +8,46 @@
 
 This repository is a part of CSI-244 at Renton Technical College.
 
-## Guided Activity Part 2 Intro To Node.js
+## Guided Activity Part 3 Bootstrap and Formdata
 1. Clone this repository to your machine.
 2. Open the repository in Visual Studio code and follow the instructions below.
 
-### Node.js Server with System Info, Logging, and Student Information
+### Express Server 
 
 #### Objective
-Create a Node.js server that:
-1. Provides system information.
-2. Logs visitor details.
-3. Displays the log.
-4. Shows a static HTML page with your personal details.
+Create a Express server that:
+1. Provides a bootstrap based home page.
+2. Provides a boostrap form for users to complete.
+3. Processes the form data from the user and saves that data to a file.
 
 ---
 
 ### Step 1: Project Setup
 
-#### Creating Your Project Folder
-- **Action:** Make a new folder for your project.
+#### Creating Your Project
+- **Action:** Create a new Node project and install express and nodemon
   - In your terminal or command prompt, run:
-    ```bash
-    mkdir my_node_server
+    ```powershell
+    npm init
     ```
-  - This creates a directory named `my_node_server`.
+  - Follow the prompts to create your project with the main entry point being called server.js.
+  - 
+- **Action:** Install express and nodemon
+  - In your terminal or command prompt, run:
+    ```powershell
+    npm install express
+    ```
+  - When that is completed run
+    ```powershell
+    npm install nodemon
+    ```
+  - modify the scripts collection in package.json with the following:
+    ```json
+      "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+    ```
 
 - **Navigate to Your Project Folder:**
   - Change into your new directory:
