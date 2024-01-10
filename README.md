@@ -68,7 +68,7 @@ Thank you for clarifying. Let's create step-by-step instructions tailored to you
 - **Starting the Server:**
   - Make the server listen on a port (e.g., 3000) for incoming connections:
     ```javascript
-    const PORT = process.env.PORT || 3000;
+    const PORT = 3000;
     app.listen(PORT, () => {
       console.log(`Server running on port ${PORT}`);
     });
