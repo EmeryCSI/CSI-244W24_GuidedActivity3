@@ -30,6 +30,35 @@ This repository is a part of CSI-244 at Renton Technical College.
     npm install express
     ```
 
+##### Installing nodemon
+- **Action:** Install Nodemon, but only as a development dependency.
+  - In the terminal, run:
+    ```powershell
+    npm install nodemon --save-dev
+    ```
+
+##### Verifying package.json
+- You should now have a package.json created in the current folder. Edit the "scripts" collection to match the following.  
+    ```json
+    {
+  "name": "user-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+      },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^3.0.2"
+      }
+    }
+
+    ```
+
 ##### Creating the Server File
 - **Action:** Create the main server file.
   - In your project directory, create a file named `server.js`.
