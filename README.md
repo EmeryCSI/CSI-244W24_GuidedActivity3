@@ -12,10 +12,6 @@ This repository is a part of CSI-244 at Renton Technical College.
 1. Clone this repository to your machine.
 2. Open the repository in Visual Studio code and follow the instructions below.
 
-Thank you for clarifying. Let's create step-by-step instructions tailored to your specific project files, including the use of `res.sendFile` for serving your HTML pages, as seen in your `server.js`. I'll follow the structure and specifics of the files from your zip file.
-
-### Step-by-Step Instructions for Your ExpressJS Project
-
 #### Step 1: Project Setup
 
 ##### Creating Your Project
@@ -76,8 +72,6 @@ Thank you for clarifying. Let's create step-by-step instructions tailored to you
 
 #### Step 3: Creating HTML Pages
 
-Certainly! We'll incorporate this into Step 3 of your instructional document, focusing on creating the `public` directory, setting up the `index.html` file, and explaining the Bootstrap components within it.
-
 #### Creating the `public` Directory and `index.html` File
 
 - **Creating the `public` Directory:**
@@ -103,7 +97,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 #### Adding Content to `index.html`
 
-1. **Setting Up the HTML Structure:**
+- **Setting Up the HTML Structure:**
    - Start with the basic HTML5 document structure. Include two `DOCTYPE` declarations for HTML5, the opening `<html>` tag with language attribute, `<head>`, and `<body>` sections.
    - In the `<head>` section, add a title for your page and include the Bootstrap CSS link. This link connects your HTML file to the Bootstrap framework, enabling you to use its pre-designed components and styles.
      ```html
@@ -123,7 +117,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
      </html>
      ```
 
-2. **Bootstrap Navbar:**
+- **Bootstrap Navbar:**
    - Inside the `<body>`, start with a Bootstrap navbar. This navbar includes a brand label, a collapsible hamburger menu for smaller screens, and navigation links.
    - The `navbar-expand-sm` class makes the navbar collapsible on screens smaller than the 'sm' breakpoint. The `navbar-light` and `bg-light` classes style it with a light color theme.
     ```html
@@ -158,7 +152,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
       </div>
     </nav>
     ```
-3. **Bootstrap Grid System:**
+- **Bootstrap Grid System:**
    - Utilize Bootstrap's grid system to structure your page content. Start with a `container` class, which centers your content and adds margins.
    - Inside the container, use `row` to create a horizontal grouping of columns.
    - Then, add `col-12`, `col-sm-6`, and `col-md-4` classes to create responsive columns. The numbers indicate how many grid columns the element should span. For instance, `col-md-4` takes up 4 out of 12 columns on medium-sized screens and larger.
@@ -209,7 +203,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
       </div>
     ```
 
-4. **Bootstrap Components - Buttons and Alert:**
+- **Bootstrap Components - Buttons and Alert:**
    - Add different styled buttons using `btn` classes like `btn-primary`, `btn-secondary`, and `btn-outline-primary`.
    - Include an alert box using the `alert` and `alert-success` classes for a success message.
     ```html
@@ -224,7 +218,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
       </div>
     </div>
     ```
-5. **Linking Bootstrap JavaScript:**
+- **Linking Bootstrap JavaScript:**
    - At the end of your `<body>`, include the Bootstrap JavaScript bundle. This script is necessary for interactive components like the collapsible navbar to function properly.
      ```html
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -232,7 +226,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 ##### Creating `support.html`
 
-1. **Creating `support.html`:**
+- **Creating `support.html`:**
    - Inside the `public` directory, you'll create a file named `support.html`.
    - Use a text editor or the command line to create this file:
      ```bash
@@ -241,7 +235,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 #### Adding Content to `support.html`
 
-1. **Basic HTML Structure:**
+- **Basic HTML Structure:**
    - Begin with the standard HTML5 structure. Include `DOCTYPE`, the opening `<html>` tag with language attribute, `<head>`, and `<body>` sections.
    - In the `<head>` section, add a title for your page and link Bootstrap’s CSS for styling.
      ```html
@@ -259,7 +253,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
      </html>
      ```
 
-2. **Bootstrap Container:**
+- **Bootstrap Container:**
    - Use a `container` class to center your form on the page. Bootstrap's `container` class provides margins and proper alignment.
      ```html
      <div class="container">
@@ -268,7 +262,7 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
      </div>
      ```
 
-3. **Creating the Form:**
+- **Creating the Form:**
    - The `form` tag defines how data will be sent. In this case, it’s using the `GET` method to `/submitform`.
    - Comments in the HTML explain that the data is sent via URL (not secure for sensitive data), and the `name` attribute in form elements corresponds to the data keys.
      ```html
@@ -325,13 +319,13 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
       </form>
      ```
 
-4. **Form Input Elements:**
+- **Form Input Elements:**
    - Notice the use Bootstrap’s `form-group` and `form-control` classes to style your input fields.
    - Each input field (like `text`, `email`, `textarea`, `date`, and `select`) is wrapped in a `div` with the class `form-group` for proper spacing and layout.
    - The `class="form-control"` on each input element gives a consistent and attractive styling.
    - The `name` attribute will determine the name of the property where the data will be sent. 
 
-5. **Submit Button:**
+- **Submit Button:**
    - A submit button is included at the end of the form. The `btn` and `btn-primary` classes style it as a primary Bootstrap button.
 
 #### Step 4: Handling Form Submissions
@@ -384,13 +378,17 @@ Certainly! We'll incorporate this into Step 3 of your instructional document, fo
 
 #### Step 5: Testing the Application
 
-1. **Run Your Server:**
-   - Use the command `node server.js` to start your server.
+- **Run Your Server:**
+   - Before you can run your server make sure that you are in the same director as server.cs
+            ```powershell
+                cd ..
+            ```
+   - Use the command `npm run dev` to start your server.
 
 2. **Test the Pages and Form:**
    - Visit `http://localhost:3000` in a browser to view the `index.html` page.
    - Go to `http://localhost:3000/support` to access the support form.
-   - Test submitting the form and ensure the server processes it as expected.
+   - Fill out the form with information and click submit.
    - A `formdata.txt` file should have been created containing the information from the form.
 
 3. **Debugging:**
