@@ -40,24 +40,13 @@ This repository is a part of CSI-244 at Renton Technical College.
 ##### Verifying package.json
 - You should now have a package.json created in the current folder. Edit the "scripts" collection to match the following.  
     ```json
-    {
-  "name": "user-input",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
       },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.18.2",
-    "nodemon": "^3.0.2"
-      }
-    }
 
     ```
+- You do not need to change anything else in package.json except for the "scripts" collection.
 
 ##### Creating the Server File
 - **Action:** Create the main server file.
