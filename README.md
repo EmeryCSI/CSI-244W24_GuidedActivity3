@@ -120,7 +120,6 @@ This repository is a part of CSI-244 at Renton Technical College.
    - In the `<head>` section, add a title for your page and include the Bootstrap CSS link. This link connects your HTML file to the Bootstrap framework, enabling you to use its pre-designed components and styles.
      ```html
      <!DOCTYPE html>
-     <!DOCTYPE html>
      <html lang="en">
        <head>
          <meta charset="UTF-8" />
